@@ -24,7 +24,7 @@
     "serve": "npm run build:css && npm run build:js && browser-sync src/ -w",
     "watch:css": "onchange 'src/scss/*.scss' -- npm run build:css",
     "watch:js": "onchange 'src/js/main.js' -- npm run build:js",
-    "dev": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
+    "dev": "concurrently 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
     "copy:css": "mkdir -p dist/css && copyfiles -u 2 src/css/styles.css dist/css",
     "copy:js": "mkdir -p dist/js && copyfiles -u 2 src/js/app.js dist/js",
     "copy:img": "mkdir -p dist/img && copyfiles -u 2 src/img/* dist/img",
@@ -46,9 +46,11 @@
     "move-cli": "^1.2.0",
     "node-sass": "^4.9.3",
     "onchange": "^4.1.0",
-    "parallelshell": "^3.0.2",
     "postcss-cli": "^6.0.0",
     "tachyons-sass": "^4.9.3",
     "uglify-js": "^3.4.8"
+  },
+  "dependencies": {
+    "concurrently": "^4.1.0"
   }
 }
