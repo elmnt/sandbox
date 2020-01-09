@@ -8,7 +8,7 @@ A quick setup to run a local server, and sandbox new ideas. Includes [tachyons-s
 2. `cd my-repo`
 3. `npm install`
 
-The postinstall fires the `npm run dev` command. You'll be serving everything up from the src/ directory. When you're ready to build a production version:
+The postinstall fires the `npm run dev` command. You'll be serving everything up from the src/ directory. If you want to build a production version:
 1. `npm run ship`
 
 To clean house and rebuild:
