@@ -20,10 +20,6 @@
     "lint": "eslint src/js",
     "uglify": "uglifyjs src/js/main.js -m -c -o src/js/app.js",
     "build:css": "npm run scss && npm run autoprefixer",
-    
-    // not here
-    // "purgecss": "purgecss -c purgecss.config.js -o src",
-
     "build:js": "npm run lint && npm run uglify",
     "serve": "npm run build:css && npm run build:js && browser-sync src/ -w",
     "watch:css": "onchange 'src/scss/*.scss' -- npm run build:css",
