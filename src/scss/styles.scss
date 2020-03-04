@@ -3,20 +3,23 @@
 // Moved everything into my src/ directory 
 @import "../tachyons/tachyons.scss";
 
-/*
-$blue:   #006697;
-$green:  #2a8703;
-$red:    #de1c24;
-$orange: #ec8031;
-$yellow: #ffc220;
-
-
-$colors: -blue, -green, -red, -orange, -yellow;
-
-
-@each $color in $colors {
-  .bg#{$color} {
-    background-color: $color;
-  }
+// Include the Bogle fonts
+@font-face {
+  font-family: "BogleWeb";
+  src: url("/fonts/BogleWeb-Regular.woff2") format("woff2"),
+       url("/fonts/BogleWeb-Regular.woff") format("woff");
 }
-*/
+@font-face {
+  font-family: "BogleWeb-Bold";
+  src: url("/fonts/BogleWeb-Bold.woff2") format("woff2"),
+       url("/fonts/BogleWeb-Bold.woff") format("woff");
+}
+
+// Demo Styles
+body {
+  font-family: BogleWeb, Helvetica, Verdana, 'Trebuchet MS', sans-serif;
+}
+// Change any text to BogleWeb-Bold
+.b {
+  font-family: BogleWeb-Bold, Helvetica, Verdana, 'Trebuchet MS', sans-serif;
+}
