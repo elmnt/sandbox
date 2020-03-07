@@ -28,28 +28,31 @@
     "copy:css": "mkdir -p dist/css && copyfiles -u 2 src/css/styles.css dist/css",
     "copy:js": "mkdir -p dist/js && copyfiles -u 2 src/js/app.js dist/js",
     "copy:img": "mkdir -p dist/img && copyfiles -u 2 src/img/* dist/img",
+    "copy:fonts": "mkdir -p dist/fonts && copyfiles -u 2 src/fonts/* dist/fonts",
+    "copy:docs": "mkdir -p dist/_docs && copyfiles -u 2 src/_docs/**/* dist/_docs",
     "copy:html": "mkdir -p dist && copyfiles -u 1 src/*.html dist",
-    "ship": "npm run copy:css && npm run copy:js && npm run copy:img && npm run copy:html",
+    "ship": "npm run copy:css && npm run copy:js && npm run copy:img && npm run copy:fonts && npm run copy:docs && npm run copy:html",
     "clean": "rm -f src/css/*.css && rm -f src/js/app.js && rm -r dist",
-    "postinstall": "npm run dev"
+    "postinstall": "npm run dev",
+    "docs": "markdown-folder-to-html src/docs"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
-    "copyfiles": "^2.1.1",
+    "copyfiles": "^2.2.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^3.1.0",
     "move-cli": "^1.2.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "onchange": "^4.1.0",
     "postcss-cli": "^6.1.3",
     "purgecss": "^1.4.2",
     "tachyons-sass": "^4.9.5",
-    "uglify-js": "^3.7.2"
+    "uglify-js": "^3.8.0"
   },
   "dependencies": {
     "concurrently": "^4.1.2"
