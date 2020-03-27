@@ -1,7 +1,67 @@
 @charset "UTF-8";
 
+// New breakpoints
+// These are somewhat non-standard responsive breakpoints, 
+// but the use-case for this site would rarely if ever go below 768px
+$breakpoint-not-small: 'screen and (min-width: 768px)' !default;
+$breakpoint-medium: 'screen and (min-width: 768px) and (max-width: 1024px)' !default;
+$breakpoint-large: 'screen and (min-width: 1024px)' !default;
+
 // Moved everything into my src/ directory 
 @import "../tachyons/tachyons.scss";
+
+// Grid
+
+.outer {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.portfolio {
+	// small
+  width: 100%;
+  // large mobile
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		display: grid;
+		grid-gap: 16px;
+		grid-template-columns: repeat(4, 1fr);
+  }
+  // medium
+	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		display: grid;
+		grid-gap: 16px;
+		grid-template-columns: repeat(8, 1fr);
+  }
+  // large
+  @media only screen and (min-width: 1024px) {
+		display: grid;
+		grid-gap: 16px;
+		grid-template-columns: repeat(12, 1fr);
+	}
+}
+
+.portfolio__item {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	outline: 1px solid black;
+	background-color: rgba(177, 225, 233, .5);
+}
+.portfolio__span {
+	// outline: 1px solid black;
+	// background-color: rgba(177, 225, 233, .5);
+	grid-column: span 2;
+	margin-bottom: 20px;
+}
+
+button {
+	@extend .br-pill;
+	@extend .bn;
+	background-color: #0065FF;
+	@extend .white;
+	font-size: 14px;
+	padding: 8px 12px;
+}
 
 /*
 $blue:   #006697;
