@@ -20,6 +20,10 @@ $breakpoint-large: 'screen and (min-width: 1024px)' !default;
 .portfolio {
 	// small
   width: 100%;
+	@media only screen and (max-width: 480px) {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
   // large mobile
 	@media only screen and (min-width: 480px) and (max-width: 768px) {
 		display: grid;
