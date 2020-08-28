@@ -29,12 +29,10 @@
     "copy:js": "mkdir -p dist/js && copyfiles -u 2 src/js/app.js dist/js",
     "copy:img": "mkdir -p dist/img && copyfiles -u 2 src/img/* dist/img",
     "copy:fonts": "mkdir -p dist/fonts && copyfiles -u 2 src/fonts/* dist/fonts",
-    "copy:docs": "mkdir -p dist/_docs && copyfiles -u 2 src/_docs/*.html dist/_docs && copyfiles -u 2 src/_docs/**/* dist/_docs",
     "copy:html": "mkdir -p dist && copyfiles -u 1 src/*.html dist",
-    "ship": "npm run copy:css && npm run copy:js && npm run copy:img && npm run copy:fonts && npm run copy:docs && npm run copy:html",
+    "ship": "npm run copy:css && npm run copy:js && npm run copy:img && npm run copy:fonts && npm run copy:html",
     "clean": "rm -f src/css/*.css && rm -f src/js/app.js && rm -r dist",
-    "postinstall": "npm run dev",
-    "docs": "markdown-folder-to-html src/docs"
+    "postinstall": "npm run dev"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
